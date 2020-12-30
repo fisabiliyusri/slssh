@@ -331,9 +331,9 @@ chown -R www-data:www-data /home/vps/public_html
 /etc/init.d/ssh restart
 /etc/init.d/dropbear restart
 /etc/init.d/stunnel4 restart
-#service squid restart
-/etc/init.d/nginx restart
-#/etc/init.d/openvpn restart
+# service squid restart
+# /etc/init.d/nginx restart
+# /etc/init.d/openvpn restart
 rm -rf ~/.bash_history && history -c
 echo "unset HISTFILE" >> /etc/profile
 
@@ -341,18 +341,6 @@ echo "unset HISTFILE" >> /etc/profile
 clear
 echo "Autoscript Include:" | tee log-install.txt
 echo "===========================================" | tee -a log-install.txt
-echo ""            | tee -a log-install.txt
-echo "Service"     | tee -a log-install.txt
-echo "-------"     | tee -a log-install.txt
-echo "OpenSSH      : 22,143"  | tee -a log-install.txt
-echo "Dropbear     : 109,456"  | tee -a log-install.txt
-echo "SSL          : 443"  | tee -a log-install.txt
-echo "SSL OpenSSH  : 43"  | tee -a log-install.txt
-echo "SSL Dropbear : 222,444,777"  | tee -a log-install.txt
-echo "SSL SSRSSH   : 69"  | tee -a log-install.txt
-echo "badvpn       : badvpn-udpgw port 7300"  | tee -a log-install.txt
-echo "nginx        : 81"  | tee -a log-install.txt
-echo ""            | tee -a log-install.txt
 echo "Script"      | tee -a log-install.txt
 echo "------"  | tee -a log-install.txt
 echo "menu      : Menampilkan daftar perintah yang tersedia"  | tee -a log-install.txt
@@ -400,7 +388,7 @@ echo "========================================================="
 /etc/init.d/dropbear restart
 /etc/init.d/stunnel4 restart
 # /etc/init.d/squid restart
-/etc/init.d/nginx restart
+# /etc/init.d/nginx restart
 # /etc/init.d/php5.6-fpm restart
 # /etc/init.d/openvpn restart
 
