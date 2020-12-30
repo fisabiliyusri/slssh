@@ -70,9 +70,11 @@ apt-get -y install git
 apt-get -y install screen
 apt-get -y install unzip
 apt-get -y install curl
+apt-get -y install ruby
+gem install lolcat
 apt-get -y install neofetch
 cd
-echo "neofetch" >> .bashrc_profile
+echo "neofetch" >> .profile
 
 # instal php5.6 ubuntu 16.04 64bit
 apt-get -y update
@@ -225,11 +227,6 @@ cmake -DBUILD_NOTHING_BY_DEFAULT=1 -DBUILD_TUN2SOCKS=1 -DBUILD_UDPGW=1
 make install
 make -i install
 
-# auto start badvpn second port
-sed -i '$ i\screen -AmdS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7400 --max-clients 1000 --max-connections-for-client 10' /etc/rc.local
-screen -AmdS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7400 --max-clients 500 --max-connections-for-client 20 &
-cd
-
 # auto start badvpn single port
 sed -i '$ i\screen -AmdS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 1000 --max-connections-for-client 10' /etc/rc.local
 screen -AmdS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 500 --max-connections-for-client 20 &
@@ -291,10 +288,6 @@ echo '.....done'
 echo; echo 'Installation has completed.'
 echo 'Config file is at /usr/local/ddos/ddos.conf'
 echo 'Please send in your comments and/or suggestions to zaf@vsnl.com'
-
-# colored text
-apt-get -y install ruby
-gem install lolcat
 
 # test
 cd /usr/bin
